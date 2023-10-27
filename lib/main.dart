@@ -12,6 +12,8 @@ import 'package:vocab_geek_ielts/screen/user_manual.dart';
 import 'package:vocab_geek_ielts/shared/urls.dart';
 import 'package:vocab_geek_ielts/utils/theme.dart';
 
+import 'controllers/AdsController.dart';
+
 void main() async {
   runApp(const MyApp());
 }
@@ -23,54 +25,42 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return
-        // GetMaterialApp(
-        //   debugShowCheckedModeBanner: false,
-        //   home: const HomeScreen(),
-        //   routes: {
-        //     // 'home': (context) => const HomeScreen(),
-        //     // 'aboutDevelopers': (context) => const AboutDevelopersScreen(),
-        //     // 'settings': (context) => const SettingScreen(),
-        //     // 'privacyPolicy': (context) => const PolicyScreen(),
-        //     // 'userManual': (context) => const UserManual(),
-        //   },
-        // );
+    Get.put(AdsController(), tag: 'AdsControllerInstance', permanent: true);
 
-        GetBuilder<ThemeChangerController>(
-            init: ThemeChangerController(),
-            builder: (themeChangerController) {
-              // Get.put(HomeController(), permanent: false);
+    return GetBuilder<ThemeChangerController>(
+        init: ThemeChangerController(),
+        builder: (themeChangerController) {
+          // Get.put(HomeController(), permanent: false);
 
-              return GetBuilder<HomeController>(
-                  init: HomeController(),
-                  builder: (homeController) {
-                    return homeController.splashScreen
-                        ? GetMaterialApp(
-                            debugShowCheckedModeBanner: false,
-                            theme: themeChangerController
-                                .themes[themeChangerController.defaultTheme],
-                            home: SplashScreen(
-                              initialSplash: true,
-                              imageUrl: themeChangerController.logoIcons[
-                                  themeChangerController.defaultTheme],
-                            ),
-                          )
-                        : GetMaterialApp(
-                            debugShowCheckedModeBanner: false,
-                            title: appTitle,
-                            theme: themeChangerController
-                                .themes[themeChangerController.defaultTheme],
-                            home: const HomeScreen(),
-                            routes: {
-                                'home': (context) => const HomeScreen(),
-                                'aboutDevelopers': (context) =>
-                                    const AboutDevelopersScreen(),
-                                'settings': (context) => const SettingScreen(),
-                                'privacyPolicy': (context) =>
-                                    const PolicyScreen(),
-                                'userManual': (context) => const UserManual(),
-                              });
-                  });
-            });
+          return GetBuilder<HomeController>(
+              init: HomeController(),
+              builder: (homeController) {
+                return homeController.splashScreen
+                    ? GetMaterialApp(
+                        debugShowCheckedModeBanner: false,
+                        theme: themeChangerController
+                            .themes[themeChangerController.defaultTheme],
+                        home: SplashScreen(
+                          initialSplash: true,
+                          imageUrl: themeChangerController
+                              .logoIcons[themeChangerController.defaultTheme],
+                        ),
+                      )
+                    : GetMaterialApp(
+                        debugShowCheckedModeBanner: false,
+                        title: appTitle,
+                        theme: themeChangerController
+                            .themes[themeChangerController.defaultTheme],
+                        home: const HomeScreen(),
+                        routes: {
+                            'home': (context) => const HomeScreen(),
+                            'aboutDevelopers': (context) =>
+                                const AboutDevelopersScreen(),
+                            'settings': (context) => const SettingScreen(),
+                            'privacyPolicy': (context) => const PolicyScreen(),
+                            'userManual': (context) => const UserManual(),
+                          });
+              });
+        });
   }
 }

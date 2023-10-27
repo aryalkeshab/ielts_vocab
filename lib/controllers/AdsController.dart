@@ -4,16 +4,16 @@ import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdsController extends GetxController {
-  AdWidget adWidget;
+  AdWidget? adWidget;
   bool isAdLoaded = false;
 
-  BannerAd myBanner;
-  InterstitialAd interstitialAd;
+  BannerAd? myBanner;
+  InterstitialAd? interstitialAd;
 
   bool isInsterstitialAdReady = false;
 
   //Please copy and paste yout banner and insterstitialAd unit here
-  var bannerAdUnit = "ca-app-pub-1692002472157021/9541231990";
+  var bannerAdUnit = "ca-app-pub-2376042358672233/4130487165";
   var insterstitialAdUnit = 'ca-app-pub-1692002472157021/4909574615';
 
   BannerAdListener listener = BannerAdListener(
@@ -31,10 +31,19 @@ class AdsController extends GetxController {
     // Called when an impression occurs on the ad.
     onAdImpression: (Ad ad) => print('Ad impression.'),
   );
+  @override
+  void dispose() {
+    // TODO: Dispose a BannerAd object
+    myBanner?.dispose();
+
+    super.dispose();
+  }
 
   @override
   void onInit() {
     // TODO: implement onInit
+    MobileAds.instance.initialize();
+
     super.onInit();
     loadBannerAds();
 
@@ -63,8 +72,8 @@ class AdsController extends GetxController {
       ),
     );
 
-    myBanner.load();
-    adWidget = AdWidget(ad: myBanner);
+    myBanner?.load();
+    adWidget = AdWidget(ad: myBanner!);
 
     print("Loading ads");
     update();
@@ -107,7 +116,7 @@ class AdsController extends GetxController {
   }
 
   void displayInsterstitialAds() {
-    interstitialAd.show();
+    interstitialAd?.show();
     update();
   }
 

@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:vocab_geek_ielts/shared/urls.dart';
+
+import '../controllers/AdsController.dart';
+import '../widgets/adsWidget.dart';
 
 class AboutDevelopersScreen extends StatelessWidget {
   const AboutDevelopersScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // https: //play.google.com/store/apps/dev?id=5329737104439787859
+    final AdsController adsController =
+        Get.find<AdsController>(tag: "AdsControllerInstance");
 
     return Scaffold(
       appBar: AppBar(
@@ -104,6 +109,7 @@ class AboutDevelopersScreen extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: adsWidget(controller: adsController),
     );
   }
 }
