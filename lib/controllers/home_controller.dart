@@ -3,7 +3,6 @@ import 'dart:developer' as developer;
 import 'dart:math';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:vocab_geek_ielts/models/answers.dart';

@@ -5,6 +5,8 @@ import 'package:vocab_geek_ielts/models/wordbank.dart';
 import 'package:http/http.dart' as http;
 import 'package:crypto/crypto.dart';
 
+import '../shared/urls.dart';
+
 class RemoteServices {
   static var client = http.Client();
   static var baseUrl = "https://vocabgeek.com/api";
@@ -23,7 +25,7 @@ class RemoteServices {
   }
 
   static Future<List<Result>?> fetchWordBank() async {
-    var url = Uri.parse("$baseUrl/wordgroups?format=json&category=ielts");
+    var url = Uri.parse("$baseUrl/wordgroups?format=json&category=$api");
 
     // log("Url is $url");
 

@@ -12,28 +12,21 @@ class AdsController extends GetxController {
 
   bool isInsterstitialAdReady = false;
 
-  //Please copy and paste yout banner and insterstitialAd unit here
-  var bannerAdUnit = "ca-app-pub-2376042358672233/4130487165";
+  var bannerAdUnit = "ca-app-pub-2376042358672233/9869118753";
   var insterstitialAdUnit = 'ca-app-pub-1692002472157021/4909574615';
 
   BannerAdListener listener = BannerAdListener(
-    // Called when an ad is successfully received.
     onAdLoaded: (Ad ad) => print('Ad loaded.'),
-    // Called when an ad request failed.
     onAdFailedToLoad: (Ad ad, LoadAdError error) {
       ad.dispose();
       print('Ad failed to load: $error');
     },
-    // Called when an ad opens an overlay that covers the screen.
     onAdOpened: (Ad ad) => print('Ad opened.'),
-    // Called when an ad removes an overlay that covers the screen.
     onAdClosed: (Ad ad) => print('Ad closed.'),
-    // Called when an impression occurs on the ad.
     onAdImpression: (Ad ad) => print('Ad impression.'),
   );
   @override
   void dispose() {
-    // TODO: Dispose a BannerAd object
     myBanner?.dispose();
 
     super.dispose();
@@ -41,42 +34,38 @@ class AdsController extends GetxController {
 
   @override
   void onInit() {
-    // TODO: implement onInit
     MobileAds.instance.initialize();
 
     super.onInit();
     loadBannerAds();
-
-    print("Ads is initialized");
   }
 
   void loadBannerAds() {
-    myBanner = BannerAd(
-      adUnitId: bannerAdUnit,
-      size: AdSize.banner,
-      request: AdRequest(),
-      listener: BannerAdListener(
-        // Called when an ad is successfully received.
-        onAdLoaded: (Ad ad) => print('Ad loaded.'),
-        // Called when an ad request failed.
-        onAdFailedToLoad: (Ad ad, LoadAdError error) {
-          ad.dispose();
-          print('Ad failed to load: $error');
-        },
-        // Called when an ad opens an overlay that covers the screen.
-        onAdOpened: (Ad ad) => print('Ad opened.'),
-        // Called when an ad removes an overlay that covers the screen.
-        onAdClosed: (Ad ad) => print('Ad closed.'),
-        // Called when an impression occurs on the ad.
-        onAdImpression: (Ad ad) => print('Ad impression.'),
-      ),
-    );
+    try {
+      myBanner = BannerAd(
+        adUnitId: bannerAdUnit,
+        size: AdSize.banner,
+        request: AdRequest(),
+        listener: BannerAdListener(
+          onAdLoaded: (Ad ad) => print('Ad loaded.'),
+          onAdFailedToLoad: (Ad ad, LoadAdError error) {
+            ad.dispose();
+            print('Ad failed to load: $error');
+          },
+          onAdOpened: (Ad ad) => print('Ad opened.'),
+          onAdClosed: (Ad ad) => print('Ad closed.'),
+          onAdImpression: (Ad ad) => print('Ad impression.'),
+        ),
+      );
 
-    myBanner?.load();
-    adWidget = AdWidget(ad: myBanner!);
+      myBanner?.load();
+      adWidget = AdWidget(ad: myBanner!);
 
-    print("Loading ads");
-    update();
+      print("Loading ads");
+      update();
+    } catch (e) {
+      print(e);
+    }
   }
 
   Future<void> loadInterstitialAds() async {
@@ -85,7 +74,6 @@ class AdsController extends GetxController {
         request: AdRequest(),
         adLoadCallback: InterstitialAdLoadCallback(
           onAdLoaded: (InterstitialAd ad) {
-            // Keep a reference to the ad so you can show it later.
             ad.fullScreenContentCallback = FullScreenContentCallback(
               onAdShowedFullScreenContent: (InterstitialAd ad) =>
                   print('$ad onAdShowedFullScreenContent.'),

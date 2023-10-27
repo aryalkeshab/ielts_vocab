@@ -1,4 +1,4 @@
-package com.vocabgeek.ielts
+package com.vocabgeek.pte
 
 import io.flutter.embedding.android.FlutterActivity
 

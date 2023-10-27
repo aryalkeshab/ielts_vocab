@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(IELTS Vocabulary Flashcards LANGUAGES CXX)
+project(PTE Flashcards - VocabGeek LANGUAGES CXX)
 
-set(BINARY_NAME "IELTS Vocabulary Flashcards")
+set(BINARY_NAME "PTE Flashcards - VocabGeek")
 
 cmake_policy(SET CMP0063 NEW)
 
