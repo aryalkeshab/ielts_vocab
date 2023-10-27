@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "PTE Flashcards - VocabGeek" "\0"
+            VALUE "FileDescription", "GRE Flashcards - VocabGeek" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "PTE Flashcards - VocabGeek" "\0"
+            VALUE "InternalName", "GRE Flashcards - VocabGeek" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "PTE Flashcards - VocabGeek.exe" "\0"
-            VALUE "ProductName", "PTE Flashcards - VocabGeek" "\0"
+            VALUE "OriginalFilename", "GRE Flashcards - VocabGeek.exe" "\0"
+            VALUE "ProductName", "GRE Flashcards - VocabGeek" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

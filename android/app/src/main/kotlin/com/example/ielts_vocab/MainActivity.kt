@@ -1,4 +1,4 @@
-package com.vocabgeek.pte
+package com.vocabgeek.gre
 
 import io.flutter.embedding.android.FlutterActivity
 

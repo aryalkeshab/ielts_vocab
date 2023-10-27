@@ -12,7 +12,7 @@ class AdsController extends GetxController {
 
   bool isInsterstitialAdReady = false;
 
-  var bannerAdUnit = "ca-app-pub-2376042358672233/9869118753";
+  var bannerAdUnit = "ca-app-pub-2376042358672233/4616792077";
   var insterstitialAdUnit = 'ca-app-pub-1692002472157021/4909574615';
 
   BannerAdListener listener = BannerAdListener(
