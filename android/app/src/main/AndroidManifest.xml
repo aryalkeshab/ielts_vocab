@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vocabgeek.sat">
+    package="com.vocabgeek.act">
    <application
-        android:label="SAT Flashcards - VocabGeek"
+        android:label="ACT Flashcards - VocabGeek"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

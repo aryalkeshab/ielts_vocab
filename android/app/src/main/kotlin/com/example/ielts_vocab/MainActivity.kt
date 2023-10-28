@@ -1,4 +1,4 @@
-package com.vocabgeek.sat
+package com.vocabgeek.act
 
 import io.flutter.embedding.android.FlutterActivity
 

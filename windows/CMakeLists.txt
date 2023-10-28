@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(SAT Flashcards - VocabGeek LANGUAGES CXX)
+project(ACT Flashcards - VocabGeek LANGUAGES CXX)
 
-set(BINARY_NAME "SAT Flashcards - VocabGeek")
+set(BINARY_NAME "ACT Flashcards - VocabGeek")
 
 cmake_policy(SET CMP0063 NEW)
 
