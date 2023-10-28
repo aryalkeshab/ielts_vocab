@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "TOEFL Flashcards - VocabGeek" "\0"
+            VALUE "FileDescription", "SAT Flashcards - VocabGeek" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "TOEFL Flashcards - VocabGeek" "\0"
+            VALUE "InternalName", "SAT Flashcards - VocabGeek" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "TOEFL Flashcards - VocabGeek.exe" "\0"
-            VALUE "ProductName", "TOEFL Flashcards - VocabGeek" "\0"
+            VALUE "OriginalFilename", "SAT Flashcards - VocabGeek.exe" "\0"
+            VALUE "ProductName", "SAT Flashcards - VocabGeek" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

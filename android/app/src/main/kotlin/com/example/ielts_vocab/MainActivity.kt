@@ -1,4 +1,4 @@
-package com.vocabgeek.toefl
+package com.vocabgeek.sat
 
 import io.flutter.embedding.android.FlutterActivity
 
