@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:vocab_geek_ielts/widgets/adsWidget.dart';
+// import 'package:vocab_geek_ielts/widgets/adsWidget.dart';
 
-import '../controllers/AdsController.dart';
+// import '../controllers/AdsController.dart';
 
 class UserManual extends StatelessWidget {
   const UserManual({Key? key}) : super(key: key);
@@ -14,13 +14,13 @@ class UserManual extends StatelessWidget {
     var screenWidth = screenSize.width;
 
     double unitHeightValue = MediaQuery.of(context).size.width >= 768 ? 1.6 : 1;
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
     return Scaffold(
       appBar: AppBar(
         title: const Text("User Manual"),
       ),
-      bottomNavigationBar: adsWidget(controller: adsController),
+      // bottomNavigationBar: adsWidget(controller: adsController),
       body: _body(
         context: context,
         screenWidth: screenWidth,

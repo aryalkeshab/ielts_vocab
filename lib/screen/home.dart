@@ -16,7 +16,7 @@ import 'package:vocab_geek_ielts/widgets/no_internet_widget.dart';
 import 'package:vocab_geek_ielts/widgets/custom_drawer.dart';
 
 import '../controllers/AdsController.dart';
-import '../widgets/adsWidget.dart';
+// import '../widgets/adsWidget.dart';
 
 // import '../main.dart';
 
@@ -116,8 +116,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
     Size screenSize = MediaQuery.of(context).size;
     double screenHeight = screenSize.height;
     double screenWidth = screenSize.width;
@@ -141,9 +141,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           drawer: CustomDrawer(),
-          bottomNavigationBar: homeController.noInternet
-              ? NoInternetWidget(controller: homeController)
-              : adsWidget(controller: adsController),
+          bottomNavigationBar: NoInternetWidget(controller: homeController),
           body: homeController.isLoading
               ? SplashScreen(
                   imageUrl:

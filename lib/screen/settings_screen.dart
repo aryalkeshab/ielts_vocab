@@ -8,7 +8,7 @@ import 'package:vocab_geek_ielts/utils/theme.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
 import '../controllers/AdsController.dart';
-import '../widgets/adsWidget.dart';
+// import '../widgets/adsWidget.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -19,14 +19,14 @@ class SettingScreen extends StatelessWidget {
     var screenHeight = screenSize.height;
     var screenWidth = screenSize.width;
     double unitHeightValue = MediaQuery.of(context).size.width >= 768 ? 1.6 : 1;
- final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings"),
         elevation: 0,
       ),
-      bottomNavigationBar:   adsWidget(controller: adsController),
+      // bottomNavigationBar: adsWidget(controller: adsController),
       body: Container(
         width: screenWidth,
         height: screenHeight,

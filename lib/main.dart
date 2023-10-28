@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vocab_geek_ielts/controllers/home_controller.dart';
@@ -25,7 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AdsController(), tag: 'AdsControllerInstance', permanent: true);
+    // Get.put(AdsController(), tag: 'AdsControllerInstance', permanent: true);
 
     return GetBuilder<ThemeChangerController>(
         init: ThemeChangerController(),

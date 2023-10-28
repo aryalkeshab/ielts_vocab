@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
-project(GRE Flashcards - VocabGeek LANGUAGES CXX)
+project(TOEFL Flashcards - VocabGeek LANGUAGES CXX)
 
-set(BINARY_NAME "GRE Flashcards - VocabGeek")
+set(BINARY_NAME "TOEFL Flashcards - VocabGeek")
 
 cmake_policy(SET CMP0063 NEW)
 

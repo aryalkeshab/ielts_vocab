@@ -4,8 +4,8 @@ import 'package:vocab_geek_ielts/controllers/home_controller.dart';
 import 'package:vocab_geek_ielts/models/wordbank.dart';
 import 'package:vocab_geek_ielts/screen/splash.dart';
 
-import '../controllers/AdsController.dart';
-import '../widgets/adsWidget.dart';
+// import '../controllers/AdsController.dart';
+// import '../widgets/adsWidget.dart';
 import 'details.dart';
 
 class WordListingScreen extends StatelessWidget {
@@ -31,8 +31,8 @@ class WordListingScreen extends StatelessWidget {
       Colors.amber,
       Theme.of(context).colorScheme.secondaryVariant,
     ];
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
     return GetBuilder<HomeController>(builder: (homeController) {
       return Scaffold(
         appBar: AppBar(
@@ -44,7 +44,7 @@ class WordListingScreen extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        bottomNavigationBar: adsWidget(controller: adsController),
+        // bottomNavigationBar: adsWidget(controller: adsController),
         body: homeController.isLoading
             ? SplashScreen(
                 imageUrl: imageUrl,
