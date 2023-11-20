@@ -8,17 +8,14 @@ import 'package:vocab_geek_ielts/shared/urls.dart';
 import 'package:vocab_geek_ielts/utils/theme.dart';
 
 class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     double unitHeightValue = MediaQuery.of(context).size.width >= 768 ? 1.3 : 1;
 
-    // var screenHeight =
-    //     MediaQuery.of(context).orientation == Orientation.landscape
-    //         ? MediaQuery.of(context).size.height * 0.4
-    //         : MediaQuery.of(context).size.height * 0.2;
-
     return GetBuilder<ThemeChangerController>(builder: (themeChangeController) {
-      return Container(
+      return SizedBox(
         width: MediaQuery.of(context).size.width >= 768
             ? MediaQuery.of(context).size.width * 0.7
             : MediaQuery.of(context).size.width * 0.7,
@@ -29,11 +26,11 @@ class CustomDrawer extends StatelessWidget {
                 // width: Get.width,
                 width: MediaQuery.of(context).size.width * 0.1,
                 height: MediaQuery.of(context).size.height * 0.20,
-                padding: EdgeInsets.symmetric(
+                padding: const EdgeInsets.symmetric(
                   // vertical: ,
                   horizontal: 50,
                 ),
-                margin: EdgeInsets.only(
+                margin: const EdgeInsets.only(
                   bottom: 10,
                 ),
                 decoration: BoxDecoration(
@@ -54,8 +51,8 @@ class CustomDrawer extends StatelessWidget {
               ),
 
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 4),
-                padding: EdgeInsets.symmetric(vertical: 10),
+                margin: const EdgeInsets.symmetric(horizontal: 4),
+                padding: const EdgeInsets.symmetric(vertical: 10),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(100.0),
                   color: Theme.of(context)
@@ -70,34 +67,20 @@ class CustomDrawer extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(100.0),
                   ),
-                  // selected: true,
-                  // tileColor: Colors.red,
-
-                  // focusColor: Colors.red,
-                  // selectedTileColor: Colors.red,
-                  // hoverColor: Colors.green,
                   leading: Icon(
                     Icons.home,
-                    // color: Theme.of(context).colorScheme.onSecondary,
                     color: Colors.white,
                     size: 20 * unitHeightValue,
                   ),
                   dense: true,
-                  // focusColor: Theme.of(context).colorScheme.onBackground,
-                  // hoverColor: Theme.of(context).colorScheme.onBackground,
-                  // selectedTileColor: Colors.red,
-                  // isThreeLine: true,
                   title: Text(
                     "Home",
                     style: TextStyle(
                       color: Colors.white,
-
-                      // color: Theme.of(context).colorScheme.secondaryVariant,
                       fontSize: 18 * unitHeightValue,
                     ),
                   ),
                   onTap: () {
-                    // Navigator.pushReplacementNamed(context, 'home'),
                     Navigator.pop(context);
                   },
                 ),
@@ -144,11 +127,11 @@ class CustomDrawer extends StatelessWidget {
                   Navigator.pushNamed(context, 'userManual'),
                 },
               ),
-              Divider(
+              const Divider(
                 color: Colors.grey,
               ),
               Container(
-                  padding: EdgeInsets.only(left: 20, top: 10, bottom: 4),
+                  padding: const EdgeInsets.only(left: 20, top: 10, bottom: 4),
                   child: Text(
                     "Others",
                     style: TextStyle(
@@ -233,11 +216,11 @@ class CustomDrawer extends StatelessWidget {
                       : showDialog(
                           context: context,
                           builder: (_) => AlertDialog(
-                            content: Text(
+                            content: const Text(
                                 "Sorry, Google play store couldn't be opened."),
                             actions: [
                               ElevatedButton(
-                                child: Text(
+                                child: const Text(
                                   'ok',
                                   style: TextStyle(
                                     color: Colors.white,
@@ -272,11 +255,11 @@ class CustomDrawer extends StatelessWidget {
                       : showDialog(
                           context: context,
                           builder: (_) => AlertDialog(
-                            content: Text(
+                            content: const Text(
                                 "Sorry, Google play store couldn't be opened."),
                             actions: [
                               ElevatedButton(
-                                child: Text(
+                                child: const Text(
                                   'ok',
                                   style: TextStyle(
                                     color: Colors.white,
