@@ -197,121 +197,121 @@ class CustomDrawer extends StatelessWidget {
                   launch(privacyPolicyUrl);
                 },
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.share,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                  size: 20 * unitHeightValue,
-                ),
-                title: Text(
-                  "Share",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondaryVariant,
-                    fontSize: 18 * unitHeightValue,
-                  ),
-                ),
-                onTap: () => {
-                  Share.share(shareUrl),
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.thumb_up,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                  size: 20 * unitHeightValue,
-                ),
-                title: Text(
-                  "Rate App",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondaryVariant,
-                    fontSize: 18 * unitHeightValue,
-                  ),
-                ),
-                onTap: () async => {
-                  await canLaunch(rateAppurl)
-                      ? await launch(rateAppurl)
-                      : showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            content: Text(
-                                "Sorry, Google play store couldn't be opened."),
-                            actions: [
-                              ElevatedButton(
-                                child: Text(
-                                  'ok',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                },
-              ),
-              ListTile(
-                // contentPadding: EdgeInsets.v,
-                leading: Icon(
-                  Icons.shopping_bag,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                  size: 20 * unitHeightValue,
-                ),
-                title: Text(
-                  "More Apps",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondaryVariant,
-                    fontSize: 18 * unitHeightValue,
-                  ),
-                ),
-                onTap: () async => {
-                  await canLaunch(moreAppsurl)
-                      ? await launch(moreAppsurl)
-                      : showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            content: Text(
-                                "Sorry, Google play store couldn't be opened."),
-                            actions: [
-                              ElevatedButton(
-                                child: Text(
-                                  'ok',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).pop();
-                                },
-                              )
-                            ],
-                          ),
-                        ),
-                },
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.exit_to_app,
-                  color: Theme.of(context).colorScheme.onSecondary,
-                  size: 20 * unitHeightValue,
-                ),
-                title: Text(
-                  "Exit",
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondaryVariant,
-                    fontSize: 18 * unitHeightValue,
-                  ),
-                ),
-                onTap: () {
-                  try {
-                    SystemChannels.platform.invokeMethod('SystemNavigator.pop');
-                  } catch (e) {
-                    exit(0);
-                  }
-                },
-              ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.share,
+              //     color: Theme.of(context).colorScheme.onSecondary,
+              //     size: 20 * unitHeightValue,
+              //   ),
+              //   title: Text(
+              //     "Share",
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.secondaryVariant,
+              //       fontSize: 18 * unitHeightValue,
+              //     ),
+              //   ),
+              //   onTap: () => {
+              //     Share.share(shareUrl),
+              //   },
+              // ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.thumb_up,
+              //     color: Theme.of(context).colorScheme.onSecondary,
+              //     size: 20 * unitHeightValue,
+              //   ),
+              //   title: Text(
+              //     "Rate App",
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.secondaryVariant,
+              //       fontSize: 18 * unitHeightValue,
+              //     ),
+              //   ),
+              //   onTap: () async => {
+              //     await canLaunch(rateAppurl)
+              //         ? await launch(rateAppurl)
+              //         : showDialog(
+              //             context: context,
+              //             builder: (_) => AlertDialog(
+              //               content: Text(
+              //                   "Sorry, Google play store couldn't be opened."),
+              //               actions: [
+              //                 ElevatedButton(
+              //                   child: Text(
+              //                     'ok',
+              //                     style: TextStyle(
+              //                       color: Colors.white,
+              //                     ),
+              //                   ),
+              //                   onPressed: () {
+              //                     Navigator.of(context).pop();
+              //                   },
+              //                 )
+              //               ],
+              //             ),
+              //           ),
+              //   },
+              // ),
+              // ListTile(
+              //   // contentPadding: EdgeInsets.v,
+              //   leading: Icon(
+              //     Icons.shopping_bag,
+              //     color: Theme.of(context).colorScheme.onSecondary,
+              //     size: 20 * unitHeightValue,
+              //   ),
+              //   title: Text(
+              //     "More Apps",
+              //     style: TextStyle(
+              //       color: Theme.of(context).colorScheme.secondaryVariant,
+              //       fontSize: 18 * unitHeightValue,
+              //     ),
+              //   ),
+              //   onTap: () async => {
+              //     await canLaunch(moreAppsurl)
+              //         ? await launch(moreAppsurl)
+              //         : showDialog(
+              //             context: context,
+              //             builder: (_) => AlertDialog(
+              //               content: Text(
+              //                   "Sorry, Google play store couldn't be opened."),
+              //               actions: [
+              //                 ElevatedButton(
+              //                   child: Text(
+              //                     'ok',
+              //                     style: TextStyle(
+              //                       color: Colors.white,
+              //                     ),
+              //                   ),
+              //                   onPressed: () {
+              //                     Navigator.of(context).pop();
+              //                   },
+              //                 )
+              //               ],
+              //             ),
+              //           ),
+              //   },
+              // ),
+              //     ListTile(
+              //       leading: Icon(
+              //         Icons.exit_to_app,
+              //         color: Theme.of(context).colorScheme.onSecondary,
+              //         size: 20 * unitHeightValue,
+              //       ),
+              //       title: Text(
+              //         "Exit",
+              //         style: TextStyle(
+              //           color: Theme.of(context).colorScheme.secondaryVariant,
+              //           fontSize: 18 * unitHeightValue,
+              //         ),
+              //       ),
+              //       onTap: () {
+              //         // try {
+              //         //   SystemChannels.platform.invokeMethod('SystemNavigator.pop');
+              //         // } catch (e) {
+              //         //  exit(0);
+              //         // }
+              //       },
+              //     ),
             ],
           ),
         ),

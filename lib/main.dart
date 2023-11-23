@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(AdsController(), tag: 'AdsControllerInstance', permanent: true);
+    // Get.put(AdsController(), tag: 'AdsControllerInstance', permanent: true);
 
     return GetBuilder<ThemeChangerController>(
         init: ThemeChangerController(),

@@ -11,8 +11,8 @@ class AboutDevelopersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
 
     return Scaffold(
       appBar: AppBar(
@@ -29,76 +29,77 @@ class AboutDevelopersScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Vocab Geek",
-                  style: TextStyle(
-                    fontSize: 24,
-                    height: 1.6,
-                    fontWeight: FontWeight.w500,
-                    color: Theme.of(context).colorScheme.secondaryVariant,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () async => {
-                    await canLaunch(moreAppsurl)
-                        ? await launch(moreAppsurl)
-                        : showDialog(
-                            context: context,
-                            builder: (_) => AlertDialog(
-                              content: const Text(
-                                  "Sorry, Google play store couldn't be opened."),
-                              actions: [
-                                ElevatedButton(
-                                  child: const Text(
-                                    'ok',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context).pop();
-                                  },
-                                )
-                              ],
-                            ),
-                          ),
-                  },
-                  child: Container(
-                    width: 115.0,
-                    height: 40.0,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(21.0),
-                      color: const Color(0xffffffff),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color(0x29000000),
-                          offset: Offset(0, 3),
-                          blurRadius: 6,
-                        ),
-                      ],
-                    ),
-                    child: const Center(
-                        child: Text(
-                      "More Apps",
-                      style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w500,
-                        color: Colors.black,
-                      ),
-                    )),
-                  ),
-                ),
+                // Text(
+                //   "Vocab Geek",
+                //   style: TextStyle(
+                //     fontSize: 24,
+                //     height: 1.6,
+                //     fontWeight: FontWeight.w500,
+                //     color: Theme.of(context).colorScheme.secondaryVariant,
+                //   ),
+                // ),
+                // GestureDetector(
+                //   onTap: () async => {
+                //     await canLaunch(moreAppsurl)
+                //         ? await launch(moreAppsurl)
+                //         : showDialog(
+                //             context: context,
+                //             builder: (_) => AlertDialog(
+                //               content: const Text(
+                //                   "Sorry, Google play store couldn't be opened."),
+                //               actions: [
+                //                 ElevatedButton(
+                //                   child: const Text(
+                //                     'ok',
+                //                     style: TextStyle(
+                //                       color: Colors.white,
+                //                     ),
+                //                   ),
+                //                   onPressed: () {
+                //                     Navigator.of(context).pop();
+                //                   },
+                //                 )
+                //               ],
+                //             ),
+                //           ),
+                //   },
+                //   child: Container(
+                //     width: 115.0,
+                //     height: 40.0,
+                //     decoration: BoxDecoration(
+                //       borderRadius: BorderRadius.circular(21.0),
+                //       color: const Color(0xffffffff),
+                //       boxShadow: [
+                //         BoxShadow(
+                //           color: Color(0x29000000),
+                //           offset: Offset(0, 3),
+                //           blurRadius: 6,
+                //         ),
+                //       ],
+                //     ),
+                //     child: const Center(
+                //         child: Text(
+                //       "More Apps",
+                //       style: TextStyle(
+                //         fontSize: 14,
+                //         fontWeight: FontWeight.w500,
+                //         color: Colors.black,
+                //       ),
+                //     )),
+                //   ),
+                // ),
               ],
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            // const SizedBox(
+            //   height: 20,
+            // ),
+            
             Padding(
               padding: const EdgeInsets.symmetric(
                 vertical: 20.0,
               ),
               child: Text(
-                "If you like this app. Please rate this app in Google Play Store. Share this app with friends to show your support. Checkout our more apps in Play store.",
+                "If you enjoy using this app, please take a moment to rate it on the App Store. Share the app with your friends to demonstrate your support. Thank you for your support!",
                 textAlign: TextAlign.start,
                 style: TextStyle(
                   fontSize: 16,
@@ -109,7 +110,7 @@ class AboutDevelopersScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: adsWidget(controller: adsController),
+      // bottomNavigationBar: adsWidget(controller: adsController),
     );
   }
 }

@@ -147,8 +147,8 @@ class DetailScreen extends StatelessWidget {
         );
       }
 
-      final AdsController adsController =
-          Get.find<AdsController>(tag: "AdsControllerInstance");
+      // final AdsController adsController =
+      //     Get.find<AdsController>(tag: "AdsControllerInstance");
       return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -159,7 +159,7 @@ class DetailScreen extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        bottomNavigationBar: adsWidget(controller: adsController),
+        // bottomNavigationBar: adsWidget(controller: adsController),
         body: homeController.isLoading
             ? Center(
                 child: Column(

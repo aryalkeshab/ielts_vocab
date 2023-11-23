@@ -31,8 +31,8 @@ class WordListingScreen extends StatelessWidget {
       Colors.amber,
       Theme.of(context).colorScheme.secondaryVariant,
     ];
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    // final AdsController adsController =
+    //     Get.find<AdsController>(tag: "AdsControllerInstance");
     return GetBuilder<HomeController>(builder: (homeController) {
       return Scaffold(
         appBar: AppBar(
@@ -44,7 +44,7 @@ class WordListingScreen extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        bottomNavigationBar: adsWidget(controller: adsController),
+        // bottomNavigationBar: adsWidget(controller: adsController),
         body: homeController.isLoading
             ? SplashScreen(
                 imageUrl: imageUrl,
