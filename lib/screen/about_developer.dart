@@ -11,8 +11,8 @@ class AboutDevelopersScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final AdsController adsController =
-        Get.find<AdsController>(tag: "AdsControllerInstance");
+    //  final AdsController adsController =
+    // Get.find<AdsController>(tag: "AdsControllerInstance");
 
     return Scaffold(
       appBar: AppBar(
@@ -109,7 +109,7 @@ class AboutDevelopersScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: adsWidget(controller: adsController),
+      // bottomNavigationBar: adsWidget(controller: adsController),
     );
   }
 }
