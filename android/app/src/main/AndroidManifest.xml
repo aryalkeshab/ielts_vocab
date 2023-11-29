@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.vocabgeek.ielts">
+    package="com.vocabgeek.pte">
    <application
         android:label="IELTS Vocabulary Flashcards"
         android:name="${applicationName}"
