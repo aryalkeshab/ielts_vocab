@@ -685,13 +685,13 @@ class _FinalDisplayState extends State<FinalDisplay> {
       String text2Display = items[i];
 
       switch (text2Display.toLowerCase()) {
-        case "n":
+        case "Noun":
           text2Display = 'Noun';
           break;
-        case "adj":
+        case "Adjective":
           text2Display = "Adjective";
           break;
-        case "v":
+        case "Verb":
           text2Display = "Verb";
           break;
         default:

@@ -1,9 +1,6 @@
-import 'dart:convert';
-
-var initialData = json.encode(
-  [
+[
   {
-      "pk": 1,
+      "pk_category": 1,
       "category": "ielts",
       "group_name": "Education",
       "group_slug": "education",
@@ -271,7 +268,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 2,
+      "pk_category": 2,
       "category": "ielts",
       "group_name": "Environment and  Biodiversity",
       "group_slug": "education_and_biodiversity",
@@ -539,7 +536,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 3,
+      "pk_category": 3,
       "category": "ielts",
       "group_name": "Business",
       "group_slug": "business",
@@ -807,7 +804,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 4,
+      "pk_category": 4,
       "category": "ielts",
       "group_name": "Health",
       "group_slug": "health",
@@ -1075,7 +1072,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 5,
+      "pk_category": 5,
       "category": "ielts",
       "group_name": "Technology",
       "group_slug": "technology",
@@ -1343,7 +1340,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 6,
+      "pk_category": 6,
       "category": "ielts",
       "group_name": "Travel",
       "group_slug": "travel",
@@ -1598,7 +1595,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 7,
+      "pk_category": 7,
       "category": "ielts",
       "group_name": "Art and Culture",
       "group_slug": "art_and_culture",
@@ -1866,7 +1863,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 8,
+      "pk_category": 8,
       "category": "ielts",
       "group_name": "Society",
       "group_slug": "society",
@@ -2134,7 +2131,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 9,
+      "pk_category": 9,
       "category": "ielts",
       "group_name": "Government",
       "group_slug": "government",
@@ -2402,7 +2399,7 @@ var initialData = json.encode(
       ]
   },
   {
-      "pk": 10,
+      "pk_category": 10,
       "category": "ielts",
       "group_name": "Food",
       "group_slug": "food",
@@ -2670,5 +2667,3 @@ var initialData = json.encode(
       ]
   }
 ]
-
-);
