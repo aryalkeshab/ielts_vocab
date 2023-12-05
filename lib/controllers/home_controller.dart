@@ -23,6 +23,7 @@ class HomeController extends GetxController {
   bool isLoading = true;
 
   List<Answers> answersList = [];
+  List<Answers> incorrectAnswerList =[];
 
   // WordBanks currentWordBank = WordBanks();
   Answers? currentAnswers;
@@ -54,7 +55,7 @@ class HomeController extends GetxController {
         noInternet = false;
         // developer.log("internet connection");
 
-        if (!isLoading && wordBank.isEmpty) fetchWordBank();
+        // if (!isLoading && wordBank.isEmpty) fetchWordBank();
         update();
       } else {
         if (wordBank.isNotEmpty) {
@@ -99,6 +100,9 @@ class HomeController extends GetxController {
       if (prefs.containsKey("answersList")) {
         answersList = answersFromJson(prefs.getString("answersList")!);
       }
+      if( prefs.containsKey("incorrectAnswerList")) {
+        incorrectAnswerList = answersFromJson(prefs.getString("incorrectAnswerList")!);
+      }
 
       String decodedWordBank =
           utf8.decode(json.decode(prefs.getString("wordBank")!).cast<int>());
@@ -111,7 +115,7 @@ class HomeController extends GetxController {
       update();
 
       // Silently fetches data everytime on start
-      fetchWordBank();
+      // fetchWordBank();
 
       // Checks if fetch Date is set or not
       // if (prefs.containsKey("fetchDate")) {
@@ -175,30 +179,32 @@ class HomeController extends GetxController {
     // developer.log("Saving answers to storage");
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("answersList", answersToJson(answersList));
+    prefs.setString("incorrectAnswerList", answersToJson(answersList));
   }
 
-  void fetchWordBank() async {
-    // isLoading = true;
-    // update();
+  
+  // void fetchWordBank() async {
+  //   // isLoading = true;
+  //   // update();
 
-    var fetchedWordLists = await RemoteServices.fetchWordBank();
-    if (fetchedWordLists != null) {
-      wordBank.clear();
-      developer.log("Inside fetch wordbank");
-      wordBank.addAll(fetchedWordLists);
-      update();
+  //   var fetchedWordLists = await RemoteServices.fetchWordBank();
+  //   if (fetchedWordLists != null) {
+  //     wordBank.clear();
+  //     developer.log("Inside fetch wordbank");
+  //     wordBank.addAll(fetchedWordLists);
+  //     update();
 
-      saveWordBankData();
-      sortData();
+  //     saveWordBankData();
+  //     sortData();
 
-      // Get.snackbar("Demo Silent Load", "Silently loaded",
-      //     backgroundColor: const Color(0xff121212));
-    }
+  //     // Get.snackbar("Demo Silent Load", "Silently loaded",
+  //     //     backgroundColor: const Color(0xff121212));
+  //   }
 
-    isLoading = false;
+  //   isLoading = false;
 
-    update();
-  }
+  //   update();
+  // }
 
   void fetchCurrentWordBank({required int wordBankPK}) async {
     currentWordList = [];
@@ -241,6 +247,8 @@ class HomeController extends GetxController {
     answersList.clear();
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.remove("answersList");
+    prefs.remove("incorrectedAnswers");
+    
     update();
   }
 
@@ -257,16 +265,42 @@ class HomeController extends GetxController {
 
   // Generating random number
   void makeRandomNumber({required int endPoint}) {
+
+    List<int> incorrectPkList =[];
+
+    for (var element in incorrectAnswerList) {
+      incorrectPkList.add(element.id);
+    }
+    
+
+
+ int randomNuma = incorrectPkList[rng.nextInt(incorrectPkList.length)];
+  print(randomNum);
+
+
     randomNum = rng.nextInt(endPoint);
-    tapped = false;
+    tapped = false;    
+    
     update();
   }
+
+  //  void makeRandomNumber() {
+
+  //   List<int> incorrectPkList =[];
+
+  //   for (var element in incorrectAnswerList) {
+  //     incorrectPkList.add(element.id);
+  //   }
+  //   randomNum = rng.nextInt(endPoint);
+ 
+    
+
+  // }
+  List<int> knewDataList =[];
 
   // When I know is clicked
   void knownClick({required String wordId}) {
     if (currentAnswers!.data.keys.contains(wordId)) {
-      // currentAnswers.data.update(wordId, (value) => value + 1);
-
       answersList
           .firstWhere((element) => element.id == currentWordBank!.pk)
           .data
@@ -281,7 +315,15 @@ class HomeController extends GetxController {
       currentAnswers!.data.addAll(forAns);
     }
 
+    for (var element in incorrectAnswerList) {
+      if( element.id == currentWordBank!.pk){
+        incorrectAnswerList.remove(element);
+      }
+    }
+  
+
     saveAnswersData();
+    
     makeRandomNumber(endPoint: currentWordList.length);
     update();
   }

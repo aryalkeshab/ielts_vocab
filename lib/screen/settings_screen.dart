@@ -103,14 +103,14 @@ class SettingScreen extends StatelessWidget {
               buttonText: "Reset All Data",
             ),
 
-            CustomSettingButton(
-              screenWidth: screenWidth,
-              unitHeightValue: unitHeightValue,
-              isRefresh: true,
-              itemText: "Update FlashCards",
-              subText: "Would you like to update your flashcards? ",
-              buttonText: "Update Data",
-            ),
+            // CustomSettingButton(
+            //   screenWidth: screenWidth,
+            //   unitHeightValue: unitHeightValue,
+            //   isRefresh: true,
+            //   itemText: "Update FlashCards",
+            //   subText: "Would you like to update your flashcards? ",
+            //   buttonText: "Update Data",
+            // ),
           ]),
         ),
       ),
@@ -162,9 +162,7 @@ class CustomSettingButton extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).pop();
-                        refresh
-                            ? homeController.fetchWordBank()
-                            : homeController.clearHistory();
+                       if( refresh) homeController.clearHistory();
 
                         Fluttertoast.showToast(
                           msg: refresh

@@ -99,7 +99,6 @@ class DetailScreen extends StatelessWidget {
 
           if (homeController.currentAnswers!.data.isNotEmpty) {
             var currentData = homeController.currentAnswers!.data;
-
             totalMastered =
                 currentData.values.where((element) => element > 0).length;
             totalLearning =

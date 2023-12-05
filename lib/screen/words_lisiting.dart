@@ -177,7 +177,7 @@ class WordListingScreen extends StatelessWidget {
                         return Future.delayed(
                           const Duration(seconds: 1),
                           () {
-                            homeController.fetchWordBank();
+                            // homeController.fetchWordBank();
                             print("Refreshed");
                           },
                         );
