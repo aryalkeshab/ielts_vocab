@@ -59,8 +59,216 @@ var initialData = json.encode(
               "meanings": [
                   "A grant or payment made to support a student's education."
               ]
+          },
+          {
+              "pk": 5,
+              "word": "Cognitive",
+              "annotations": [
+                  "Adjective"
+              ],
+              "examples": [
+                  "Cognitive development is crucial in the early years of education."
+              ],
+              "meanings": [
+                  "Relating to cognition (mental action or process of acquiring knowledge)."
+              ]
+          },
+          {
+              "pk": 6,
+              "word": "Literacy",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "The literacy program aims to improve reading and writing skills among adults."
+              ],
+              "meanings": [
+                  "The ability to read and write."
+              ]
+          },
+          {
+              "pk": 7,
+              "word": "Pedagogy",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "His pedagogy is based on interactive learning."
+              ],
+              "meanings": [
+                  "The method and practice of teaching."
+              ]
+          },
+          {
+              "pk": 8,
+              "word": "Syllabus",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "The syllabus for the course includes both theory and practical sessions."
+              ],
+              "meanings": [
+                  "The subjects in a course of study or teaching."
+              ]
+          },
+          {
+              "pk": 9,
+              "word": "Tuition",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "She pays for private tuition in mathematics."
+              ],
+              "meanings": [
+                  "Teaching or instruction, especially of individual pupils or small groups."
+              ]
+          },
+          {
+              "pk": 10,
+              "word": "Assessment",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "The final assessment will determine their grades."
+              ],
+              "meanings": [
+                  "The evaluation or estimation of the nature, quality, or ability of someone or something."
+              ]
+          },
+          {
+              "pk": 11,
+              "word": "Dissertation",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "He is currently working on his dissertation in psychology."
+              ],
+              "meanings": [
+                  "A long essay on a particular subject, especially one written for a university degree."
+              ]
+          },
+          {
+              "pk": 12,
+              "word": "Graduate",
+              "annotations": [
+                  "Verb"
+              ],
+              "examples": [
+                  "She graduated from Harvard last year."
+              ],
+              "meanings": [
+                  "To complete a degree, especially a higher education degree."
+              ]
+          },
+          {
+              "pk": 13,
+              "word": "Intellectual",
+              "annotations": [
+                  "Adjective"
+              ],
+              "examples": [
+                  "The debate was an intellectual challenge for everyone involved."
+              ],
+              "meanings": [
+                  "Relating to the intellect."
+              ]
+          },
+          {
+              "pk": 14,
+              "word": "Seminar",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "There's a seminar next week on digital marketing trends."
+              ],
+              "meanings": [
+                  "A conference or other meeting for discussion or training."
+              ]
+          },
+          {
+              "pk": 15,
+              "word": "Thesis",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "His thesis on environmental science won an award."
+              ],
+              "meanings": [
+                  "A statement or theory put forward to be maintained or proved."
+              ]
+          },
+          {
+              "pk": 16,
+              "word": "Bibliography",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "You need to include a comprehensive bibliography in your research paper."
+              ],
+              "meanings": [
+                  "A list of the books referred to in a scholarly work."
+              ]
+          },
+          {
+              "pk": 17,
+              "word": "Concentration",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "Her concentration is in molecular genetics."
+              ],
+              "meanings": [
+                  "Intense focus or study on a subject or topic."
+              ]
+          },
+          {
+              "pk": 18,
+              "word": "Lecturer",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "The lecturer in philosophy is known for his dynamic teaching style."
+              ],
+              "meanings": [
+                  "A person who gives lectures, especially as an occupation at a university or college of higher education."
+              ]
+          },
+          {
+              "pk": 19,
+              "word": "Plagiarism",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "The university has a strict policy against plagiarism."
+              ],
+              "meanings": [
+                  "The practice of taking someone else's work or ideas and passing them off as one's own."
+              ]
+          },
+          {
+              "pk": 20,
+              "word": "Tutorial",
+              "annotations": [
+                  "Noun"
+              ],
+              "examples": [
+                  "In today's tutorial, we will discuss the fundamentals of quantum physics."
+              ],
+              "meanings": [
+                  "A period of instruction given by a university or college tutor to an individual or very small group."
+              ]
           }
-          ]
+      ]
   },
   {
       "pk": 2,

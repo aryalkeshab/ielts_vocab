@@ -118,8 +118,7 @@ class DetailScreen extends StatelessWidget {
                 colorindex = 2;
               }
 
-              // developer.log("Light ${currentData['1']}");
-              // developer.log("Light Current idex ${colorindex}");
+           
             }
           }
         }
@@ -175,9 +174,35 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               )
-            : homeController.currentWordBank != null &&
+            : homeController.isCompleted
+                ? Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            'assets/images/congrats_image.png',
+                            scale: 2,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const Text(
+                              "Congratulations, you have completed all the words!\nIf you want to try again, please click on reset button in settings.", 
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 18),),
+                        )
+                      ],
+                    ),
+                  ):
+            
+            
+            homeController.currentWordBank != null &&
                     homeController.currentWordList.isNotEmpty
-                ? Container(
+                ? 
+                
+                
+                Container(
                     height: screenHeight,
                     width: screenWidth,
                     color: Theme.of(context).colorScheme.background,

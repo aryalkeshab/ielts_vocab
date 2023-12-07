@@ -179,7 +179,10 @@ class HomeController extends GetxController {
     // developer.log("Saving answers to storage");
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("answersList", answersToJson(answersList));
-    prefs.setString("incorrectAnswerList", answersToJson(answersList));
+
+    String? stringData = prefs.getString("answersList");
+    
+    prefs.setString("incorrectAnswerList", stringData.toString());
   }
 
   
@@ -264,25 +267,78 @@ class HomeController extends GetxController {
   }
 
   // Generating random number
+
+int? randomNumber;
+bool isCompleted=false;
   void makeRandomNumber({required int endPoint}) {
 
-    List<int> incorrectPkList =[];
 
-    for (var element in incorrectAnswerList) {
-      incorrectPkList.add(element.id);
+
+
+
+
+     randomNumber = rng.nextInt(endPoint);
+
+    if(currentAnswers!.data.isNotEmpty){
+
+
+   final selectedWord =  currentWordList
+              .elementAt(randomNumber!);
+                if (currentWordList.length == currentAnswers!.data.length) {
+      // Check if all values in currentAnswers.data are greater than 0
+      if (currentAnswers!.data.values.every((value) => value > 0)) {
+
+        isCompleted = true; // Set completed to true
+        print("All values in currentAnswers.data are greater than 0");
+        update();
+        return;
+      }
     }
-    
 
 
- int randomNuma = incorrectPkList[rng.nextInt(incorrectPkList.length)];
-  print(randomNum);
+      
+
+    currentAnswers!.data.forEach((key, value) {
+
+      
 
 
-    randomNum = rng.nextInt(endPoint);
-    tapped = false;    
-    
-    update();
+
+      if (key == selectedWord.pk.toString()) {
+        if(value>0){
+          makeRandomNumber(endPoint: endPoint);
+
+        }else{
+          randomNum = randomNumber!;
+          
+      tapped = false;
+      update();
+      
+
+  
+        }
+
+      
+     
+       
+      }else{
+
+        randomNum = randomNumber!;
+        tapped = false;
+        update();
+      }
+    });
+    }else{
+
+      randomNum = randomNumber!;
+      tapped = false;
+      update();
+    }
+
   }
+
+
+   
 
   //  void makeRandomNumber() {
 
@@ -315,11 +371,13 @@ class HomeController extends GetxController {
       currentAnswers!.data.addAll(forAns);
     }
 
-    for (var element in incorrectAnswerList) {
-      if( element.id == currentWordBank!.pk){
-        incorrectAnswerList.remove(element);
-      }
-    }
+    // for (var element in incorrectAnswerList) {
+    //   if( element.id == currentWordBank!.pk){
+    //     incorrectAnswerList.remove(element);
+    //   }
+    // }
+    print("here");
+    print(incorrectAnswerList.length);
   
 
     saveAnswersData();

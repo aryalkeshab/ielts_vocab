@@ -8,6 +8,11 @@ PODS:
   - fluttertoast (0.0.2):
     - Flutter
     - Toast
+  - home_widget (0.0.1):
+    - Flutter
+  - path_provider_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
   - rate_my_app (1.1.4):
     - Flutter
   - Reachability (3.2)
@@ -25,6 +30,8 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - flutter_tts (from `.symlinks/plugins/flutter_tts/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
+  - home_widget (from `.symlinks/plugins/home_widget/ios`)
+  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
   - rate_my_app (from `.symlinks/plugins/rate_my_app/ios`)
   - share (from `.symlinks/plugins/share/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
@@ -44,6 +51,10 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/flutter_tts/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
+  home_widget:
+    :path: ".symlinks/plugins/home_widget/ios"
+  path_provider_foundation:
+    :path: ".symlinks/plugins/path_provider_foundation/darwin"
   rate_my_app:
     :path: ".symlinks/plugins/rate_my_app/ios"
   share:
@@ -58,6 +69,8 @@ SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
   flutter_tts: 0f492aab6accf87059b72354fcb4ba934304771d
   fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
+  home_widget: 0434835a4c9a75704264feff6be17ea40e0f0d57
+  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
   rate_my_app: e249ec0751c276811746ff89558c23dc0da39f0c
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   share: 0b2c3e82132f5888bccca3351c504d0003b3b410

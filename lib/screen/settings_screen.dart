@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-// import 'package:vocab_geek_new/controllers/AdsController.dart';
 import 'package:vocab_geek_ielts/controllers/home_controller.dart';
 import 'package:vocab_geek_ielts/utils/theme.dart';
-
 import 'package:flutter_switch/flutter_switch.dart';
-
-import '../controllers/AdsController.dart';
-import '../widgets/adsWidget.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({Key? key}) : super(key: key);
@@ -24,7 +19,7 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Settings"),
-        elevation: 0,
+        elevation: 2,
       ),
       // bottomNavigationBar:   adsWidget(controller: adsController),
       body: Container(
@@ -50,21 +45,26 @@ class SettingScreen extends StatelessWidget {
                   vertical: 10,
                   horizontal: 10,
                 ),
+                
                 decoration: BoxDecoration(
-                  color: Theme.of(context).backgroundColor,
+                  color:  Theme.of(context).colorScheme.background,
+                  border:  Border.all(
+                    color: Theme.of(context).colorScheme.secondaryVariant,
+                    width: 1,
+                  ),
                   borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(10),
                       topRight: Radius.circular(10),
                       bottomLeft: Radius.circular(10),
                       bottomRight: Radius.circular(10)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: Colors.grey.withOpacity(0.5),
+                  //     spreadRadius: 5,
+                  //     blurRadius: 7,
+                  //     offset: Offset(0, 3), // changes position of shadow
+                  //   ),
+                  // ],
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -162,7 +162,7 @@ class CustomSettingButton extends StatelessWidget {
                       ),
                       onPressed: () {
                         Navigator.of(context).pop();
-                       if( refresh) homeController.clearHistory();
+                      homeController.clearHistory();
 
                         Fluttertoast.showToast(
                           msg: refresh
@@ -202,20 +202,27 @@ class CustomSettingButton extends StatelessWidget {
             decoration: BoxDecoration(
               // color: Colors.white,
 
-              color: Theme.of(context).backgroundColor,
-              borderRadius: const BorderRadius.only(
+              border:  Border.all(
+                color: Theme.of(context).colorScheme.secondaryVariant,
+                width: 1,
+              ),
+color:
+
+Theme.of(context).colorScheme.background,              borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(10),
                   topRight: Radius.circular(10),
                   bottomLeft: Radius.circular(10),
-                  bottomRight: Radius.circular(10)),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ],
+                  bottomRight: Radius.circular(10),
+                  
+                  ),
+              // boxShadow: [
+              //   BoxShadow(
+              //     color: Colors.grey.withOpacity(0.5),
+              //     spreadRadius: 5,
+              //     blurRadius: 7,
+              //     offset: Offset(0, 3), // changes position of shadow
+              //   ),
+              // ],
             ),
             child: Column(
               children: [
