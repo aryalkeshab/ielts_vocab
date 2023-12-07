@@ -9,4 +9,4 @@ const shareUrl =
 
 const googlePlayIdentifier = "com.vocabgeek.ielts";
 
-const appTitle = "IELTS Flashcards - VocabGeek";
+const appTitle = "PTE Flashcards VocabGeek";

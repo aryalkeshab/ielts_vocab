@@ -241,6 +241,7 @@ class PracticeTile extends StatelessWidget {
           MaterialPageRoute(
             builder: (context) => DetailScreen(
               title: element.groupName,
+              isFromViewAll: false,
             ),
           ),
         );
@@ -358,6 +359,8 @@ class PracticeTile extends StatelessWidget {
                             ),
                           ),
                         );
+                                Get.find<HomeController>().isCompleted = false;
+
 
                         homeController.fetchCurrentWordBank(
                             wordBankPK: element.pk);

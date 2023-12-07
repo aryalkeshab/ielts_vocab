@@ -33,8 +33,12 @@ int colorindex = 3;
 
 class DetailScreen extends StatelessWidget {
   final String title;
+  final bool isFromViewAll ;
   const DetailScreen({
+
     required this.title,
+    required this.isFromViewAll,
+   
   });
 
   @override
@@ -174,7 +178,7 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               )
-            : homeController.isCompleted
+            : homeController.isCompleted &&isFromViewAll==false
                 ? Center(
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
@@ -226,6 +230,7 @@ class DetailScreen extends StatelessWidget {
                                     unitHeightvalue: unitHeightValue,
                                     maximumHeight: maximumHeight,
                                     minimumHeight: minimumHeight,
+                                    isFromViewAll:isFromViewAll
                                   )
                                 : InitialDisplay(
                                     type: wordStatus,
@@ -235,9 +240,12 @@ class DetailScreen extends StatelessWidget {
                                     homeController: homeController,
                                     unitHeightvalue: unitHeightValue,
                                     minimumHeight: minimumHeight,
+                                    isFromViewAll: isFromViewAll,
                                   ),
                           ),
-                          SizedBox(
+                          Column(
+                            children: [
+                               SizedBox(
                             height: 12 * unitHeightValue * unitHeightValue,
                           ),
                           Indicators(
@@ -270,6 +278,10 @@ class DetailScreen extends StatelessWidget {
                           SizedBox(
                             height: 12 * unitHeightValue * unitHeightValue,
                           ),
+                          
+                            ],
+                          )
+                         
                         ],
                       ),
                     ),
@@ -290,6 +302,7 @@ class InitialDisplay extends StatelessWidget {
   final double unitHeightvalue;
   final HomeController homeController;
   final double minimumHeight;
+  final bool isFromViewAll;
 
   const InitialDisplay({
     required this.word,
@@ -299,6 +312,7 @@ class InitialDisplay extends StatelessWidget {
     required this.homeController,
     required this.unitHeightvalue,
     required this.minimumHeight,
+    required this.isFromViewAll
   });
 
   @override
@@ -430,6 +444,7 @@ class FinalDisplay extends StatefulWidget {
   final HomeController homeController;
   final double minimumHeight;
   final double maximumHeight;
+  final bool isFromViewAll;
 
   const FinalDisplay({
     required this.word,
@@ -440,6 +455,7 @@ class FinalDisplay extends StatefulWidget {
     required this.unitHeightvalue,
     required this.minimumHeight,
     required this.maximumHeight,
+    required this.isFromViewAll
   });
 
   @override
@@ -458,6 +474,7 @@ class _FinalDisplayState extends State<FinalDisplay> {
   double pitch = 1.0;
   double rate = 0.5;
   bool isCurrentLanguageInstalled = false;
+  bool isFromViewAll= false;
 
   late double unitHeightvalue;
 
@@ -480,6 +497,7 @@ class _FinalDisplayState extends State<FinalDisplay> {
   initState() {
     super.initState();
     unitHeightvalue = widget.unitHeightvalue;
+   isFromViewAll = widget.isFromViewAll;
     initTts();
   }
 
@@ -893,6 +911,8 @@ class _FinalDisplayState extends State<FinalDisplay> {
                   ],
                 ),
               ),
+            
+
               DecisionStackContainer(
                 homeController: homeController,
                 word: word,

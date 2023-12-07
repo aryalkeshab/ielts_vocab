@@ -11,6 +11,7 @@ import 'details.dart';
 class WordListingScreen extends StatelessWidget {
   final String title;
   final String imageUrl;
+  
 
   const WordListingScreen(
       {Key? key, required this.title, required this.imageUrl})
@@ -106,12 +107,14 @@ class WordListingScreen extends StatelessWidget {
 
                             return GestureDetector(
                               onTap: () {
+                                Get.find<HomeController>().tapped = false;
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => DetailScreen(
                                       title: homeController
                                           .currentWordBank!.groupName,
+                                          isFromViewAll: true,
                                     ),
                                   ),
                                 );

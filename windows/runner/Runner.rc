@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "IELTS Vocabulary Flashcards" "\0"
+            VALUE "FileDescription", "PTE Vocabulary Flashcards" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "IELTS Vocabulary Flashcards" "\0"
+            VALUE "InternalName", "PTE Vocabulary Flashcards" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "IELTS Vocabulary Flashcards.exe" "\0"
-            VALUE "ProductName", "IELTS Vocabulary Flashcards" "\0"
+            VALUE "OriginalFilename", "PTE Vocabulary Flashcards.exe" "\0"
+            VALUE "ProductName", "PTE Vocabulary Flashcards" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

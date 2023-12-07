@@ -153,7 +153,13 @@ class HomeController extends GetxController {
   }
 
   void fetchDataFromLocal() {
-    wordBank = resultFromJson(initialData);
+
+    try {
+      wordBank = resultFromJson(initialData);
+    } catch (e) {
+      developer.log(e.toString());
+    }
+    // wordBank = resultFromJson(initialData);
     saveWordBankData();
     sortData();
 
