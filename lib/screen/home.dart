@@ -235,6 +235,7 @@ class PracticeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        Get.find<HomeController>().isCompleted = false;
         Navigator.push(
           context,
           MaterialPageRoute(

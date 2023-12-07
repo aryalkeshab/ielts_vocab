@@ -99,7 +99,6 @@ class DetailScreen extends StatelessWidget {
 
           if (homeController.currentAnswers!.data.isNotEmpty) {
             var currentData = homeController.currentAnswers!.data;
-
             totalMastered =
                 currentData.values.where((element) => element > 0).length;
             totalLearning =
@@ -119,8 +118,7 @@ class DetailScreen extends StatelessWidget {
                 colorindex = 2;
               }
 
-              // developer.log("Light ${currentData['1']}");
-              // developer.log("Light Current idex ${colorindex}");
+           
             }
           }
         }
@@ -176,9 +174,35 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
               )
-            : homeController.currentWordBank != null &&
+            : homeController.isCompleted
+                ? Center(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Center(
+                          child: Image.asset(
+                            'assets/images/congrats_image.png',
+                            scale: 2,
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: const Text(
+                              "Congratulations, you have completed all the words!\nIf you want to try again, please click on reset button in settings.", 
+                              textAlign: TextAlign.center,
+                              style: TextStyle(fontSize: 18),),
+                        )
+                      ],
+                    ),
+                  ):
+            
+            
+            homeController.currentWordBank != null &&
                     homeController.currentWordList.isNotEmpty
-                ? Container(
+                ? 
+                
+                
+                Container(
                     height: screenHeight,
                     width: screenWidth,
                     color: Theme.of(context).colorScheme.background,
@@ -685,13 +709,13 @@ class _FinalDisplayState extends State<FinalDisplay> {
       String text2Display = items[i];
 
       switch (text2Display.toLowerCase()) {
-        case "n":
+        case "Noun":
           text2Display = 'Noun';
           break;
-        case "adj":
+        case "Adjective":
           text2Display = "Adjective";
           break;
-        case "v":
+        case "Verb":
           text2Display = "Verb";
           break;
         default:
